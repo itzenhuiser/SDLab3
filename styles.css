@@ -66,3 +66,43 @@ footer {
     height: 50px; /* Footer height */
     line-height: 50px; /* Center the text vertically */
 }
+
+/******************************************LOGIN STYLES*****************************************************
+/* Style the form */
+form {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the form inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the form label */
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background: #555;
+}
