@@ -39,6 +39,16 @@ nav ul li a:hover {
     color: #ddd;
 }
 
+image1 {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
 /* Main content area */
 main {
     padding: 20px;
@@ -50,7 +60,7 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 50px; /* Footer height */
