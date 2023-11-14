@@ -23,10 +23,25 @@
     </header>
     <main>
         <h1>Our Projects</h1>
-        <p>This is the Projects page content.</p>
+        <!-- Inside your projects.html -->
+<div class="project">
+    <h3>Lab 1 - Temperature Sensor</h3>
+    <div class="project-image">
+        <img src="Images/Lab1Circuit.png" alt="Lab 1 Circuit">
+    </div>
+    <div class="project-description">
+        <p>In this lab our team successfully developed a smart thermometer embedded system. This thermometer was capable of reading in live temperature data, which was displayed on a LCD and a computer, with a live graph. This Circuit was battery powered with a bluetooth module that connected to a computer. </p>
+    </div>
+    <div class="project-image">
+        <img src="Images/Lab1-graph.png" alt="Lab 1 UIX">
+    </div>
+    <div class="project-description">
+        <p>Pictured above is the user interface we designed for this thermometer. As the circuit transmits temperatures(via bluetooth), every one second, the data is read on the computer and plotted onto the graph. The "Toggle Data" button allows users to toggle the unit that the temperatures are being printed in (C/F). The "Toggle Data" button allows users to turn on/off the LCD display connected to the circuit. The "Set Limits" button allows users to manually enter a min/max temperature threshold, that when reached, a specificed phone number will recieve a text, notifying them that their preset threshold has been reached.  </p>
+    </div>
+</div>
     </main>
     <footer>
-        <p>&copy; 2023 Company Name</p>
+        <p>&copy; 2023 UIOWA SD Team 10</p>
     </footer>
     <script src="scripts.js"></script>
 </body>
