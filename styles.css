@@ -112,22 +112,22 @@ button[type="register"]:hover {
     background: #555;
 }
 /* styling for projects.html **********************/
-/* Inside your stylesheet.css */
 .project {
     display: flex;
     flex-direction: column;
-    width: 80%; /* adjust as needed */
+    width: 80%; 
     margin: 0 auto;
     padding: 10px;
-    border: 1px solid #ccc; /* for a light border as seen in the image */
-    border-radius: 5px; /* if you want rounded corners */
-    background-color: #f9f9f9; /* for a light grey background */
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f9f9f9;
+    margin-bottom: 40px;
 }
 
 .project-image img {
-    width: 100%; /* makes the image responsive */
-    height: auto; /* maintain aspect ratio */
-    border-bottom: 1px solid #ccc; /* if you want a separator */
+    width: 40%; 
+    height: auto; 
+    border-bottom: 1px solid #ccc; 
 }
 .project-image:first-child img {
     max-width: 100%;
