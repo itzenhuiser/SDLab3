@@ -98,7 +98,7 @@ label {
 button[type="register"],
 button[type="login"] {
     width: 90%;
-    padding: 3px;
+    padding: 5px;
     border: none;
     border-radius: 10px;
     background: #333;
