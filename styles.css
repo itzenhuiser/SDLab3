@@ -116,8 +116,8 @@ button[type="register"]:hover {
 .project {
     display: flex;
     flex-direction: column;
-    width: 300px; /* adjust as needed */
-    margin: 20px;
+    width: 80%; /* adjust as needed */
+    margin: 0 auto;
     padding: 10px;
     border: 1px solid #ccc; /* for a light border as seen in the image */
     border-radius: 5px; /* if you want rounded corners */
@@ -129,6 +129,10 @@ button[type="register"]:hover {
     height: auto; /* maintain aspect ratio */
     border-bottom: 1px solid #ccc; /* if you want a separator */
 }
+.project-image:first-child img {
+    max-width: 100%;
+    height: auto;
+  }
 
 .project-description {
     padding: 10px;
