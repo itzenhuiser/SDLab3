@@ -111,3 +111,35 @@ button[type="login"]:hover {
 button[type="register"]:hover {
     background: #555;
 }
+/* styling for projects.html **********************/
+/* Inside your stylesheet.css */
+.project {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* adjust as needed */
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc; /* for a light border as seen in the image */
+    border-radius: 5px; /* if you want rounded corners */
+    background-color: #f9f9f9; /* for a light grey background */
+}
+
+.project-image img {
+    width: 100%; /* makes the image responsive */
+    height: auto; /* maintain aspect ratio */
+    border-bottom: 1px solid #ccc; /* if you want a separator */
+}
+
+.project-description {
+    padding: 10px;
+}
+
+.project-description h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.project-description p {
+    color: #666;
+    line-height: 1.5;
+}
