@@ -171,19 +171,31 @@ button[type="register"]:hover {
 .info-section {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 20px;
 }
 
 .info-section img {
     max-width: 25%;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-right: 10px;
 }
 
 .info-section-text {
     max-width: 40%;
+    border-radius: 8px;
+}
+
+.info-section-text h2{
+    padding: 10px;
+    background-color: darkgrey;
+    border-radius: 8px;
+}
+
+.info-section-text p{
+    background-color: darkgrey; 
+    padding: 10px;
+    border-radius: 8px;
 }
 
 @media (max-width: 768px) {
