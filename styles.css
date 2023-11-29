@@ -111,8 +111,6 @@ button[type="login"]:hover {
 button[type="register"]:hover {
     background: #555;
 }
-<<<<<<< Updated upstream
-=======
 /* styling for projects.html **********************/
 .project {
     display: flex;
@@ -157,17 +155,15 @@ button[type="register"]:hover {
 }
 
 .team-member {
-    width: 20%; /* Adjust the width as needed */
+    width: 20%;
     margin: 10px;
     padding: 15px;
-    border: 1px solid #ddd; /* Add a border for better visibility */
+    border: 1px solid #ddd;
     text-align: center;
 }
 
-/* Add a media query to adjust the width on smaller screens */
 @media (max-width: 768px) {
     .team-member {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
     }
 }
->>>>>>> Stashed changes
