@@ -111,3 +111,63 @@ button[type="login"]:hover {
 button[type="register"]:hover {
     background: #555;
 }
+<<<<<<< Updated upstream
+=======
+/* styling for projects.html **********************/
+.project {
+    display: flex;
+    flex-direction: column;
+    width: 80%; 
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f9f9f9;
+    margin-bottom: 40px;
+}
+
+.project-image img {
+    width: 40%; 
+    height: auto; 
+    border-bottom: 1px solid #ccc; 
+}
+.project-image:first-child img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.project-description {
+    padding: 10px;
+}
+
+.project-description h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.project-description p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 20%; /* Adjust the width as needed */
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd; /* Add a border for better visibility */
+    text-align: center;
+}
+
+/* Add a media query to adjust the width on smaller screens */
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+>>>>>>> Stashed changes
