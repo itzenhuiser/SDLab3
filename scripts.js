@@ -38,9 +38,21 @@ async function getPassword(username) {
 
 }
 
+<<<<<<< Updated upstream
 getPassword("tyler").then(password => {
   console.log('Password = ' + password);
 })
 .catch(err => console.error(err))
 .finally(() => client.end());
+>>>>>>> Stashed changes
+=======
+getPassword("tyler")
+  .then((password) => {
+    console.log("Password = " + password);
+  })
+  .catch((err) => console.error(err))
+  .finally(() => client.end());
+
+console.log("test");
+
 >>>>>>> Stashed changes
