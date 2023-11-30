@@ -221,6 +221,13 @@ button[type="register"]:hover {
   border-radius: 8px;
 }
 
+.landon-info-section{
+  max-width: 30%; 
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
 @media (max-width: 768px) {
   .team-member {
     width: 100%;

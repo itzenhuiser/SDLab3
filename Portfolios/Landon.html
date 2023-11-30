@@ -22,13 +22,35 @@
     </header>
     <main>
       <h1>Portfolio - Landon Tiet</h1>
+      <div class="info-container" style="display: flex">
+        
+        <div class="landon-info-section">
+          <h1 style="background-color: darkgrey;">About Me</h1>
+          <img src="Portf_images/Landon.png" style="max-width: 60%">
+          <p>Hello, my name is Landon Tiet, I am a fourth year computer science engineer at the University of Iowa. Initially I had applied to the University as a psychology major however over the summer decided to change my major over to undecided engineering and eventually to computer science engineering. After college I hope to use my experience to work as a software engineer.</p>
+        </div>
 
-      <div class="info-section-1" style="max-width: 35%">
-        <h1>About Me</h1>
-        <img src="Portf_images/Landon.jpg" style="display:block">
-        <p>Hello, my name is Landon Tiet, I am a fourth year computer science engineer at the University of Iowa. Initially I had applied to the University as a psychology major however over the summer decided to change my major over to undecided engineering and eventually to computer science engineering.</p>
+        <div class="landon-info-section">
+          <h1 style="background-color: darkgrey;">Hobbies/Interests</h1>
+          <img src="Portf_images/scene.jpg" style="max-width: 100%">
+          <p>In my free time I enjoy playing soccer and basketball with my friends, playing games, and taking pictures. Although I don't have any professional equipment, I still enjoy taking photos to capture fun or nice looking moments.</p>
+        </div>
+
+        <div class="landon-info-section">
+          <h1 style="background-color: darkgrey;">Fun Fact</h1>
+          <img src="Portf_images/bunny.jpg" style="max-width: 100%">
+          <p>I'm a fan of animals, during my senior year of high school I used to spend time outside of school volunteering for a local animal shelter. Although I don't have any pets now, when I was younger my family took in this holland lop because his owner could no longer care for him.</p>
+        </div>
       </div>
-      <p>This is the portfolio for Team Member 3.</p>
+
+      <div class="comments">
+        <h2 style="text-align: left">Comments </h2>
+        <form action="process_comment.php" method="post">
+            <textarea id="comment" name="comment" placeholder= "Leave a comment" style="width: 400px; height: 100px; align-self: left" required></textarea><br>
+            <input type="submit" value="Submit Comment">
+        </form>
+      </div>
+    </div>
     </main>
     <footer>
       <p>&copy; 2023 Company Name</p>
