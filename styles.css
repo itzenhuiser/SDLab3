@@ -1,172 +1,228 @@
-
 /* Reset some basic elements */
-body, h1, p, ul {
-    margin: 0;
-    padding: 0;
+body,
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /* Simple styling for the body */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    padding-bottom: 50px; /* Footer height */
-    background-color: #f0f0f0;
-
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  padding-bottom: 50px; /* Footer height */
+  background-color: #f0f0f0;
 }
 
 /* Header and navigation styling */
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ddd;
+  color: #ddd;
 }
 
 image1 {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 /* Main content area */
 main {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Footer styling */
 footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px; /* Footer height */
-    line-height: 50px; /* Center the text vertically */
+  background: #333;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Footer height */
+  line-height: 50px; /* Center the text vertically */
 }
 
 /******************************************LOGIN STYLES*****************************************************
 /* Style the form */
 form {
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* Style the form inputs */
 input[type="text"],
 input[type="password"] {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 /* Style the form label */
 label {
-    display: block;
-    margin: px 0;
+  display: block;
+  margin: px 0;
 }
 
 /* Style the submit button */
 button[type="register"],
 button[type="login"] {
-    width: 90%;
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
-    background: #333;
-    color: white;
-    cursor: pointer;
+  width: 90%;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: white;
+  cursor: pointer;
 }
 button[type="login"]:hover {
-    background: #555;
+  background: #555;
 }
 button[type="register"]:hover {
-    background: #555;
+  background: #555;
 }
 /* styling for projects.html **********************/
 .project {
-    display: flex;
-    flex-direction: column;
-    width: 80%; 
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    background-color: #ffffff;
-    margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-bottom: 40px;
 }
 
 .project-image img {
-    width: 40%; 
-    height: auto; 
-    border-bottom: 1px solid #ccc; 
+  width: 40%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
 }
 .project-image:first-child img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .schematic img {
-    width: 80%; 
-    height: auto;
-  }
+  width: 80%;
+  height: auto;
+}
 
 .project-description {
-    padding: 10px;
+  padding: 10px;
 }
 
 .project-description h3 {
-    margin-top: 0;
-    color: #333;
+  margin-top: 0;
+  color: #333;
 }
 
 .project-description p {
-    color: #666;
-    line-height: 1.5;
+  color: #666;
+  line-height: 1.5;
 }
 
 /* styling for Alex.html **********************/
 
 .alex-portf-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: auto;
 }
 
 .alex-sections {
-    background: #fff; /* or any color that matches the image */
-    border: 1px solid #ccc; /* adjust as necessary */
-    padding: 20px;
+  background: #fff; /* or any color that matches the image */
+  border: 1px solid #ccc; /* adjust as necessary */
+  padding: 20px;
 }
 
+.team-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.team-container h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.team-member {
+  width: 20%;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.info-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.info-section img {
+  max-width: 25%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.info-section-text {
+  max-width: 40%;
+  border-radius: 8px;
+}
+
+.info-section-text h2 {
+  padding: 10px;
+  background-color: darkgrey;
+  border-radius: 8px;
+}
+
+.info-section-text p {
+  background-color: darkgrey;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    width: 100%;
+  }
+}
