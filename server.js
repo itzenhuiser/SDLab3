@@ -4,6 +4,8 @@ const { getPassword } = require('./scripts');
 
 const app = express();
 
+app.use(express.static('.'));
+
 // Middleware to parse the form data
 app.use(bodyParser.urlencoded({ extended: false }));
 
