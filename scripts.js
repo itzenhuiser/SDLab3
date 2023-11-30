@@ -58,3 +58,6 @@ function promptUser() {
 }
 
 promptUser();
+
+
+module.exports = { getPassword };
