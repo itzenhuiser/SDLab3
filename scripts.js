@@ -1,6 +1,12 @@
 const { Client } = require("pg");
+const readline = require("readline");
 
-// Placeholder for any future JavaScript interactivity
+// Create readline interface for terminal input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 const client = new Client({
   user: "mdb_student19",
   host: "s-l112.engr.uiowa.edu",
@@ -21,8 +27,7 @@ async function getPassword(username) {
     const result = await client.query(query, [username]);
 
     if (result.rows.length > 0) {
-      const password = result.rows[0].password;
-      return password;
+      return result.rows[0].password;
     } else {
       return null;
     }
@@ -32,9 +37,24 @@ async function getPassword(username) {
   }
 }
 
-getPassword("tyler")
-  .then((password) => {
-    console.log("Password = " + password);
-  })
-  .catch((err) => console.error(err))
-  .finally(() => client.end());
+function promptUser() {
+  rl.question('Enter username: ', (username) => {
+    rl.question('Enter password: ', async (password) => {
+      try {
+        const correctPassword = await getPassword(username);
+        if (correctPassword && password === correctPassword) {
+          console.log('Login successful');
+        } else {
+          console.log('Login failed');
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        client.end();
+        rl.close();
+      }
+    });
+  });
+}
+
+promptUser();
