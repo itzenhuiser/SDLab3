@@ -26,11 +26,21 @@
   </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+      
+        <li id="loginLogoutButton"><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="message">
     <!-- This message will be updated dynamically based on the login result -->
     Login Failed
   </div>
   <button class="home-button" onclick="goBackLogin()">Go Back to Login</button>
+
+  <script src="loginlogout.js"></script>
 
   <script>
     function goBackLogin() {
