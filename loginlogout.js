@@ -1,39 +1,43 @@
-   
-   function handleLogin() {
-    console.log("handlelogin called");
-    // Example client-side code to handle the server response
-    fetch('/login', {
+function handleLogin(username, password) {
+    fetch('http://localhost:8000/login', {
         method: 'POST',
-        body: JSON.stringify({ username: 'example', password: 'password' }),
+        body: JSON.stringify({ username, password }),
         headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin' // Needed for session cookies if you're using them
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('This is what the client is receiving:', data);
+        
+        // Set login status and update navigation bar based on the response
+        localStorage.setItem('isLoggedIn', data.loggedIn ? 'true' : 'false');
+        updateNavigationBar(data.loggedIn);
+
         if (data.loggedIn) {
-          // Set the login status in local storage
-          localStorage.setItem('isLoggedIn', 'true');
-          console.log("here");
-          window.location.href = login_redirect.html; // Redirect to the specified URL
+            // Redirect to the specified URL on successful login
+            window.location.href = data.redirect;
         } else {
-          // Handle login failure
-          handleLogout();
+            console.log("Login failed");
         }
-      });
-    }
+    })
+    .catch(error => {
+        console.error('Login error:', error);
+    });
+}
+
   
-  // Function to handle logout
   function handleLogout() {
-    // Send a request to the server to logout the user
     fetch('/logout', {
-      method: 'POST',
+      method: 'GET', // Change this to GET
       credentials: 'same-origin' // Include cookies in the request
     })
     .then(response => {
       if (response.ok) {
-        // Redirect the user to the login page upon successful logout
-        window.location.href = 'login.html';
+        localStorage.setItem('isLoggedIn', 'false');
+        updateNavigationBar(false); // Update the navigation bar
+        window.location.href = 'index.html'; // Redirect to the index page
       } else {
         console.error('Logout failed');
       }
@@ -41,34 +45,50 @@
     .catch(error => {
       console.error('Error during logout', error);
     });
-    updateNavigationBar(false);
   }
   
-  
-   
-   
-   
    // Function to update the navigation bar based on user's login status
     function updateNavigationBar(isLoggedIn) {
       const loginLogoutButton = document.getElementById('loginLogoutButton');
       if (isLoggedIn) {
         loginLogoutButton.innerHTML = '<a href="#" onclick="handleLogout()">Logout</a>';
-        localStorage.setItem('isLoggedIn', 'true');
+        //localStorage.setItem('isLoggedIn', 'true');
         console.log('setting login button to true');
       } else {
         loginLogoutButton.innerHTML = '<a href="login.html">Login</a>';
-        localStorage.setItem('isLoggedIn', 'false');
+        //localStorage.setItem('isLoggedIn', 'false');
         console.log("updatenav called but is logged in was false")
       }
     }
 
-    // Check isLoggedIn state on page load
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const form = document.querySelector('form');
+    //     console.log(form); // Check if the form is null
+    //     if(form) {
+    //       form.addEventListener('submit', function(event) {
+    //         event.preventDefault();
+    //         handleLogin();
+    //       });
+    //     } else {
+    //       console.log('Form not found!');
+    //     }
+    //   });
     document.addEventListener('DOMContentLoaded', function() {
-      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-      if(isLoggedIn){
-        handleLogout();
-      }
-      else{
-        handleLogin();
-      }
+        // Select the form using its ID
+        const form = document.getElementById('loginForm');
+        if (form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                handleLogin(username, password); // Call handleLogin with the credentials
+            });
+        } else {
+            console.log('Form not found!');
+        }
     });
+    
+      
+      
+      
+      

@@ -11,15 +11,20 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(bodyParser.json());
 
 app.use(express.static('.'));
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 
 // Login route
 app.post('/login', async (req, res) => {
+    console.log('in the vag')
   const { username, password } = req.body;
   try {
     const correctPassword = await getPassword(username);
+    // console.log(req.body);
+    // console.log(correctPassword);
+    // console.log(password);
     if (correctPassword && password === correctPassword) {
       // Save the username in the session
       req.session.username = username;
