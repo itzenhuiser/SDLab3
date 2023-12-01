@@ -18,7 +18,7 @@ app.post('/login', async (req, res) => {
         res.redirect('/login_redirect.html'); // Redirect to the login result page
       } else {
         console.log('Login failed');
-        res.send('Login failed');
+        res.redirect('/login_failed_redirect.html');
       }
     } catch (err) {
       console.error(err);
