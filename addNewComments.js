@@ -36,8 +36,6 @@
   function promptComments() {
     rl.question('Enter host page name: ', async (username) => {
       try {
-  
-        // Insert new comment
         rl.question('Enter new comment: ', async (newComment) => {
           await insertComment(newComment, username, 'alex'); // Assuming sender is always 'alex'
           rl.close();
