@@ -3,6 +3,9 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const { getPassword } = require('./scripts');
 
+const host = '0.0.0.0';
+const port = process.env.PORT || 8000;
+
 const app = express();
 
 // Session middleware setup
@@ -60,4 +63,4 @@ app.get('/logout', (req, res) => {
     });
   });
 
-app.listen(8000, () => console.log('Server is running on port 8000'));
+app.listen(port, host, () => console.log('Server is running on port 8000'));
