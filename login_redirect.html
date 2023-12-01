@@ -1,52 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Result</title>
-  <style>
-    /* Add your CSS styles here */
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-    .message {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    .home-button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Senior Design Group 10</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-          <ul>
-            <li id="loginLogoutButton"><a href="login.html">Login</a></li>
-          </ul>
-        </nav>
-      </header>
-  <div class="message">
-    <!-- This message will be updated dynamically based on the login result -->
-    Login Successful
-  </div>
-  <button class="home-button" onclick="goBackHome()">Go Back Home</button>
+      <nav>
+        <ul>
+          <li><a href="indexLogged.html">Home</a></li>
+          <li><a href="ProjectsLogged.html">Projects</a></li>
+          <li><a href="Portfolios/Alex.html">Alex</a></li>
+          <li><a href="Portfolios/Kyle.html">Kyle</a></li>
+          <li><a href="Portfolios/Landon.html">Landon</a></li>
+          <li><a href="Portfolios/Tyler.html">Tyler</a></li>
+          <li><a href="index.html">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Welcome to Our Team's Page!</h1>
+      <img
+        class="image1"
+        src="Images/Cover Photo.png"
+        style="max-width: 35%"
+        alt="Cover Photo"
+      />
 
-  <script src="loginlogout.js"></script>
+      <div class="info-section" style="border-color: black">
+        <img src="Images/UIowaOldCapitolAI.jpg" alt="Info Photo"/>
+        <div class="info-section-text">
+          <h2
+            style="
+              margin-top: 0px;
+              margin-bottom: 10px;
+              background-color: darkgrey;
+            "
+          >
+            Information Section
+          </h2>
+          <p style="background-color: darkgrey; padding: 10px">
+            Welcome to Team 10's website created by Alex, Kyle, Landon, and
+            Tyler. We are a group of CSE/ECE students graduating from the
+            University of Iowa in Spring of 2024. This website was created as
+            part of the Senior Design class at the University. Our website
+            provides information about the work we did during Labs 1, 2, and 3,
+            along with our final project for the course.
+          </p>
+        </div>
+      </div>
 
+      <div class="team-container">
+        <div class="team-member">
+          <h2>Alex</h2>
+          <p>Major:</p>
+          <p>Focus:</p>
+          <p>Coding Languages:</p>
+          <p><br />Phone Number:</p>
+          <p>Email:</p>
+        </div>
 
-  <script>
-    function goBackHome() {
-      // Redirect to the home page when the button is clicked
-      window.location.href = "index.html";
-    }
-  </script>
-</body>
+        <!-- Team member 2 -->
+        <div class="team-member">
+          <h2>Kyle</h2>
+          <p>Major:Computer Science and Engineering</p>
+          <p>Focus:Machine Learning</p>
+          <p>Coding Languages:Python, C, Java</p>
+          <p><br />Phone Number: 571-386-9431</p>
+          <p>Email:kylemcguinness13@gamil.com</p>
+        </div>
+
+        <!-- Team member 3 -->
+        <div class="team-member">
+          <h2>Landon</h2>
+          <p>Major: Computer Science Engineering</p>
+          <p>Focus: Software Engineering</p>
+          <p>Coding Languages: C/C++, Java, Python, Assembly</p>
+          <p><br />Phone Number: 319-471-0721</p>
+          <p>Email: landontiet21@gmail.com</p>
+        </div>
+
+        <!-- Team member 4 -->
+        <div class="team-member">
+          <h2>Tyler</h2>
+          <p>Major: Electrical Engineering</p>
+          <p>Focus: Software Engineering</p>
+          <p>Coding Languages: C++, Java, Python</p>
+          <p><br />Phone Number: 847-340-8579</p>
+          <p>Email: tmarmstrong@uiowa.edu</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Team 10</p>
+    </footer>
+    <script src="loginlogout.js"></script>
+  </body>
 </html>
