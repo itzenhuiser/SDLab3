@@ -18,14 +18,14 @@
   </header>
   <main>
     <!-- Add an ID to the form for easy JavaScript selection -->
-    <form id="loginForm" action="http://localhost:8000/login" method="post">
+    <form id="loginForm" method="post">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required>
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
       <!-- Use a div or other container instead of li -->
       <div id="loginButtonContainer">
-        <button type="submit" id="loginLogoutButton">Login</button>
+        <button type="button" id="loginLogoutButton" onclick="submitForm()">Login</button>
       </div>
       <div id="registerLink">
         <label>Don't have an account? Register below!</label>
@@ -37,6 +37,21 @@
   <footer>
     <p>&copy; 2023 Company Name</p>
   </footer>
+  <script>
+    function submitForm() {
+      // Get the current window location (URL)
+      var currentLocation = window.location;
+
+      // Build the dynamic URL with the same port as the current location
+      var dynamicURL = currentLocation.protocol + "//" + currentLocation.hostname + ":" + currentLocation.port + "/login";
+
+      // Set the form action attribute to the dynamic URL
+      document.getElementById("loginForm").action = dynamicURL;
+
+      // Submit the form
+      document.getElementById("loginForm").submit();
+    }
+  </script>
   <script src="loginlogout.js"></script>
 </body>
 </html>
