@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const { getPassword } = require('./scripts');
+const {insertUser} = require('./addUser');
 
 const app = express();
 
@@ -39,6 +40,16 @@ app.post('/login', async (req, res) => {
     res.status(500).send('An error occurred');
   }
 });
+
+app.post('/register', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    insertUser(5,username,password);
+    console.log("creating user " + username + " " + password);
+    // check if user and pass already used
+    res.redirect('/login.html');
+  });
+   
 
 // Example route that requires user to be logged in
 app.get('/profile', (req, res) => {
