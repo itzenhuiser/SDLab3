@@ -11,23 +11,28 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(bodyParser.json());
 
 app.use(express.static('.'));
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 
 // Login route
 app.post('/login', async (req, res) => {
+    console.log('in the vag')
   const { username, password } = req.body;
   try {
     const correctPassword = await getPassword(username);
+    // console.log(req.body);
+    // console.log(correctPassword);
+    // console.log(password);
     if (correctPassword && password === correctPassword) {
       // Save the username in the session
       req.session.username = username;
       console.log('Login successful');
-      res.redirect('/login_redirect.html'); // Redirect to the login result page
+      res.json({ loggedIn: true, redirect: '/login_redirect.html'});
     } else {
       console.log('Login failed');
-      res.redirect('/login_failed_redirect.html');
+      res.json({ loggedIn: false, redirect: '/login_failed_redirect.html'});
     }
   } catch (err) {
     console.error(err);
@@ -43,5 +48,16 @@ app.get('/profile', (req, res) => {
     res.redirect('/login.html'); // Redirect to the login page if not logged in
   }
 });
+// Logout route
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('An error occurred');
+      } else {
+        res.redirect('/login.html'); // Redirect to the login page after logout
+      }
+    });
+  });
 
 app.listen(8000, () => console.log('Server is running on port 8000'));

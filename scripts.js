@@ -44,6 +44,7 @@ function promptUser() {
         const correctPassword = await getPassword(username);
         if (correctPassword && password === correctPassword) {
           console.log('Login successful');
+          handleLogin();
         } else {
           console.log('Login failed');
         }
