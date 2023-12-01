@@ -37,24 +37,35 @@
     <main>
         <h1>Portfolio - Kyle McGuinness</h1>
     </main>
-<div class="alex-portf-container">
+    <div class="alex-portf-container">
+        <!-- Your existing portfolio content here -->
+        <div class="alex-sections">
+            <h2>About Me</h2>
+            <img class="image1" src="Portf_images/Kyle_headshot.JPG">
+            <p>Hi, I am a fourth year Computer Science and Engineering Major focusing in Machine Learning and Artificial Intelligence.</p>
+        </div>
     
-    <div class="alex-sections">
-        <h2>About Me</h2>
-        <img class="image1" src="Portf_images/Kyle_headshot.JPG">
-        <p>Hi, I am a fourth year Computer Science and Engineering Major focusing in Machine Learning and Artificial Intelligence.</p>
-    </div>
+        <div class="alex-sections">
+            <h2>Internship</h2>
+            <img class="image1" src="Portf_images/intellisee.jfif">
+            <p>I currently intern for this small computer vision company and handle their feedback loop. My job is to constantly update the model with the images it makes mistakes on to avoid making the same mistakes in the future.</p>
+        </div>
+    
+        <div class="alex-sections">
+            <h2>Travel</h2>
+            <img class="image1" src="Portf_images/cliffs.jpg">
+            <p>I like to travel in my free time, specifically seeing my family over in the UK. Two summers ago I visited the georgous Cliffs of Moher.</p>
+        </div>
+        <!-- Form for user input and submission -->
+        <form id="messageForm">
+            <input type="text" id="userInput" placeholder="Type your message here" />
+            <button type="submit" id="submitBtn" onclick="submitMessage()">Submit</button>
+        </form>
 
-    <div class="alex-sections">
-        <h2>Internship</h2>
-        <img class="image1" src="Portf_images/intellisee.jfif">
-        <p>I currently intern for this small computer vision company and handle their feedback loop. My job is to constantly update the model with the images it makes mistakes on to avoid making the same mistakes in the future.</p>
-    </div>
-
-    <div class="alex-sections">
-        <h2>Travel</h2>
-        <img class="image1" src="Portf_images/cliffs.jpg">
-        <p>I like to travel in my free time, specifically seeing my family over in the UK. Two summers ago I visited the georgous Cliffs of Moher.</p>
+        <!-- Display area for submitted messages -->
+        <div class="alex-sections" id="messageDisplay">
+            <!-- Submitted messages will appear here -->
+        </div>
     </div>
 </div>
 
@@ -63,5 +74,20 @@
       <p>&copy; 2023 Company Name</p>
     </footer>
     <script src="scripts.js"></script>
+    <script>
+        function submitMessage() {
+            app.get('/profile', (req, res) => {
+                if (req.session.username) {
+                var username = req.session.username;
+                // Use the username in the code
+                var message = document.getElementById('userInput').value;
+                var messageDisplay = document.getElementById('messageDisplay');
+                messageDisplay.innerHTML += `<p><strong>${username}:</strong> ${message}</p>`;
+                } else {
+                    alert('Please log in to submit a message.'); // Redirect to the login page if the user is not logged in
+                }
+            });
+        }
+    </script>
   </body>
 </html>
