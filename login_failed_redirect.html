@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Result</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .home-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff0037;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <!-- This message will be updated dynamically based on the login result -->
+    Login Failed
+  </div>
+  <button class="home-button" onclick="goBackLogin()">Go Back to Login</button>
+
+  <script>
+    function goBackLogin() {
+      // Redirect to the home page when the button is clicked
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
