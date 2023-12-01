@@ -1,8 +1,5 @@
 const { Client } = require("pg");
 const readline = require("readline");
-
-i = 5
-i = i +1
    
   // Create readline interface for terminal input
   const rl = readline.createInterface({
@@ -26,8 +23,8 @@ i = i +1
    
   async function insertUser(id, username, password) {
     try {
-      const query = 'INSERT INTO "SDLab3"."login" (id, username, password) VALUES ($1, $2, $3)';
-      await client.query(query, [id, username, password]);
+      const query = 'INSERT INTO "SDLab3"."login" (username, password) VALUES ($1, $2)';
+      await client.query(query, [username, password]);
       console.log('user inserted successfully!');
     } catch (error) {
       console.error('Error inserting user:', error);
@@ -39,7 +36,7 @@ i = i +1
     rl.question('Enter new username: ', async (username) => {
       try {
         rl.question('Enter new password: ', async (password) => {
-          await insertUser(i, username, password);
+          await insertUser(username, password);
           rl.close();
           client.end();
         });
