@@ -39,6 +39,7 @@ async function getPassword(username) {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 getPassword("tyler").then(password => {
   console.log('Password = ' + password);
 })
@@ -55,4 +56,27 @@ getPassword("tyler")
 
 console.log("test");
 
+>>>>>>> Stashed changes
+=======
+function promptUserLogin() {
+  rl.question('Enter username: ', (username) => {
+    rl.question('Enter password: ', async (password) => {
+      try {
+        const correctPassword = await getPassword(username);
+        if (correctPassword && password === correctPassword) {
+          console.log('Login successful');
+        } else {
+          console.log('Login failed');
+          rl.close();
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    });
+  });
+}
+
+promptUserLogin();
+
+module.exports = { getPassword };
 >>>>>>> Stashed changes
